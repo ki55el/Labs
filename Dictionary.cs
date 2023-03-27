@@ -17,7 +17,8 @@ class HelloWorld {
     8. Count
     9. GetType
     10. Equals
-    11. Comparer
+    11. Keys
+    12. Values
     0. EXIT
                 ");
 
