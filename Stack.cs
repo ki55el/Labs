@@ -60,8 +60,8 @@ class HelloWorld {
                 case 5:     //Equals
                     Print("1 ", stack);
                     Stack<string> eqs = new Stack<string>(list);
-                    Print("2 ", stack);
-                    Console.WriteLine(stack.Equals(stack));
+                    Print("2 ", eqs);
+                    Console.WriteLine(stack.Equals(eqs));
                     Ok();
                     break;
 
