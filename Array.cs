@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 class HelloWorld {
     static void Main() {
         bool Menu = true;
@@ -13,8 +13,8 @@ class HelloWorld {
                 "7. Reverse\n" +
                 "8. Sort\n" +
                 "9. Выход\n");
-            int[] nums = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
-            int[] sort = new int[10] { 9, 0, 5, 4, 2, 7, 8, 6, 1, 3 };
+            Array nums = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
+            Array sort = new int[10] { 9, 0, 5, 4, 2, 7, 8, 6, 1, 3 };
             
             int number = Convert.ToInt32(Console.ReadLine());
             Console.Clear();
@@ -50,7 +50,7 @@ class HelloWorld {
                     break;
 
                 case 5:     //Copy
-                    int[] copy = new int[10];
+                    Array copy = new int[10];
                     Console.Write("Исходный ");
                     Print(nums);
                     nums.CopyTo(copy, 0);
@@ -63,7 +63,7 @@ class HelloWorld {
                     Print(nums);
                     Console.Write("Найти элементы больше: ");
                     int inp = int.Parse(Console.ReadLine());
-                    int[] find = Array.FindAll(nums, x => x > inp);
+                    Array find = Array.FindAll((int[]) nums, x => x > inp);
                     Print(find);
                     Ok();
                     break;
@@ -98,9 +98,9 @@ class HelloWorld {
         Console.WriteLine("\nДля продолжения нажмите любую клавишу . . .");
         Console.ReadKey();
     }
-    static void Print(int[] array) {
+    static void Print(Array Inp) {
         Console.WriteLine("Массив: ");
-        foreach (int e in array) {
+        foreach (int e in Inp) {
             Console.Write(e + " ");
         }
         Console.WriteLine();
