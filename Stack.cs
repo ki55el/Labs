@@ -6,7 +6,7 @@ class HelloWorld {
     static void Main() {
         bool Menu = true;
         do {
-            Console.WriteLine(@"Queue
+            Console.WriteLine(@"Stack
     1. Clear
     2. Contains
     3. CopyTo
