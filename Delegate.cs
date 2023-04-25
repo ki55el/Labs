@@ -1,6 +1,7 @@
 ﻿using System;
 
 delegate double Oper(double x, double y);
+
 interface ICalc
 {
     double Add(double x, double y);
