@@ -1,20 +1,18 @@
-﻿using System;
+using System;
 using System.Linq;
 class HelloWorld
 {
     static void Main()
     {
-        var nums = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+        var nums = Console.ReadLine().Split().Select(n => int.Parse(n)).ToList();
         Counter(nums);
 
         Console.WriteLine("Удаление элементов . . . ");
 
-        nums = (from n in nums
-               where n > 0
-               select n).ToArray();
+        nums.RemoveAll(n => n < 0);
         Counter(nums);
     }
-    static void Counter(int[] nums) => Console.WriteLine($@"
+    static void Counter(List<int> nums) => Console.WriteLine($@"
 min: {nums.Min()}
 max: {nums.Max()}
 кол-во четных: {nums.Count(n => n % 2 == 0)}
