@@ -4,19 +4,37 @@ class HelloWorld
 {
     static void Main()
     {
-        var nums = Console.ReadLine().Split().Select(n => int.Parse(n)).ToList();
-        Counter(nums);
+        var all = from n in Console.ReadLine().Split()
+            select int.Parse(n);
+        Printer(all);
 
-        Console.WriteLine("Удаление элементов . . . ");
+        Console.WriteLine("Удаление отрицательных элементов . . . ");
 
-        nums.RemoveAll(n => n < 0);
-        Counter(nums);
+        var nominus = from n in all
+            where n >= 0
+            select n;
+        Printer(nominus);
     }
-    static void Counter(List<int> nums) => Console.WriteLine($@"
+    static void Printer(IEnumerable<int> nums)
+    {
+        var even = from n in nums
+            where n % 2 == 0
+            select n;
+
+        var plus = from n in nums
+            where n > 0
+            select n;
+
+        var nozero = from n in nums
+            where n != 0
+            select n;
+
+        Console.WriteLine($@"
 min: {nums.Min()}
 max: {nums.Max()}
-кол-во четных: {nums.Count(n => n % 2 == 0)}
-кол-во положительных: {nums.Count(n => n > 0)}
-кол-во ненулевых: {nums.Count(n => n != 0)}
+кол-во четных: {even.Count()}
+кол-во положительных: {plus.Count()}
+кол-во ненулевых: {nozero.Count()}
 ");
+    }
 }
