@@ -51,9 +51,9 @@ class HelloWorld
         foreach (var group in groups)
         {
             Console.WriteLine(group.Key + ':');
-            foreach (var e in group)
+            foreach (var element in group)
             {
-                Console.WriteLine('\t' + e);
+                Console.WriteLine('\t' + element);
             }
         }
     }
