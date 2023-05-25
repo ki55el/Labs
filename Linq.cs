@@ -4,16 +4,14 @@ class HelloWorld
 {
     static void Main()
     {
-        var all = from n in Console.ReadLine().Split()
-            select int.Parse(n);
-        Printer(all);
+        var nums = (from n in Console.ReadLine().Split()
+            select int.Parse(n)).ToList();
+        Printer(nums);
 
         Console.WriteLine("Удаление отрицательных элементов . . . ");
 
-        var nominus = from n in all
-            where n >= 0
-            select n;
-        Printer(nominus);
+        nums.RemoveAll(x => x < 0);
+        Printer(nums);
     }
     static void Printer(IEnumerable<int> nums)
     {
